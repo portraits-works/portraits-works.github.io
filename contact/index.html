@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Contact</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700,700i%7cNunito+Sans:400,400i,700,700i">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.min.css%3Fv=f65e728143.css" />
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/custom.css%3Fv=f65e728143.css" />
+    
+    <script>
+        var pagination_next_page_number       = '',
+            pagination_available_pages_number = '',
+            url = "http://localhost:2368",
+            //optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
+            ghost_root_url = "/ghost/api/v2";
+    </script>
+    
+    <script src="../assets/js/jquery-3.5.0.min.js%3Fv=f65e728143"></script>
+
+    <script>
+        if(typeof(Storage) !== 'undefined') {
+			if (localStorage.getItem('selected-theme') == 'light') {
+				$(document.documentElement).attr('data-theme', 'light');
+			}
+			else if (localStorage.getItem('selected-theme') == 'dark') {
+				$(document.documentElement).attr('data-theme', 'dark');
+			}
+        }
+    </script>
+    
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Portraits" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact" />
+    <meta property="og:description" content="If you want to set up a contact page for people to be able to reach out to you, the simplest way is to set up a simple page like this and list the different ways people can reach out to you. For example, here&#x27;s how to reach us!@Ghost" />
+    <meta property="og:url" content="http://localhost:2368/contact/" />
+    <meta property="article:published_time" content="2022-02-21T18:25:50.000Z" />
+    <meta property="article:modified_time" content="2022-02-22T14:21:04.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contact" />
+    <meta name="twitter:description" content="If you want to set up a contact page for people to be able to reach out to you, the simplest way is to set up a simple page like this and list the different ways people can reach out to you. For example, here&#x27;s how to reach us!@Ghost" />
+    <meta name="twitter:url" content="http://localhost:2368/contact/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Portraits Works" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Portraits",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Portraits Works",
+        "url": "http://localhost:2368/author/admin/",
+        "sameAs": []
+    },
+    "headline": "Contact",
+    "url": "http://localhost:2368/contact/",
+    "datePublished": "2022-02-21T18:25:50.000Z",
+    "dateModified": "2022-02-22T14:21:04.000Z",
+    "description": "If you want to set up a contact page for people to be able to reach out to you,\nthe simplest way is to set up a simple page like this and list the different\nways people can reach out to you.\n\nFor example, here&#x27;s how to reach us!\n * @Ghost [https://twitter.com/ghost] on Twitter\n * @Ghost [https://www.facebook.com/ghost] on Facebook\n * @Ghost [https://instagram.com/ghost] on Instagram\n\nIf you prefer to use a contact form, almost all of the great embedded form\nservices work great with Ghost and are",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.36" />
+    <link rel="alternate" type="application/rss+xml" title="Portraits" href="../rss/index.html" />
+    
+    <script defer src="../public/cards.min.js%3Fv=f65e728143"></script>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css%3Fv=f65e728143.css">
+    <style>
+    div.header-column.right {
+        display: none;
+    }
+</style>
+<style>:root {--ghost-accent-color: #FF1A75;}</style>
+    
+</head>
+<body class="page-template page-contact">
+
+    
+<header id="header">
+    <div class="container">
+        <div class="header-flex">
+            <div class="header-column left">
+                <div class="navbar-brand">
+                    <div class="navbar-title">
+                            <h1><a href="../index.html">Portraits</a></h1>
+                        <p class="navbar-description">Drawings &amp; Paintings</p>
+                    </div>
+                    <nav class="navbar-menu">
+                        <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-works"><a href="../index.html">Works</a></li>
+
+        <li class="nav-list-item nav-author"><a href="../author/index.html">Author</a></li>
+
+        <li class="nav-list-item nav-pencil"><a href="../tag/pencils/index.html">Pencil</a></li>
+
+        <li class="nav-list-item nav-painting"><a href="http://localhost:2368/tag/paintings/">Painting</a></li>
+
+        <li class="nav-list-item nav-contact nav-current"><a href="index.html">Contact</a></li>
+
+    <!-- End the loop -->
+</ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="header-column right">
+                <div class="navbar-tools">
+                        <a class="nav-signup" href="index.html#/portal/signin">Sign In</a>
+                        <a class="nav-signup" href="index.html#/portal/signup"><svg class="svg-email svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 402.29"><path d="M64,36.5714286 C48.8754286,36.5714286 36.5714286,48.8754286 36.5714286,64 L36.5714286,338.285714 C36.5714286,353.409143 48.8754286,365.714286 64,365.714286 L448,365.714286 C463.123429,365.714286 475.428571,353.409143 475.428571,338.285714 L475.428571,64 C475.428571,48.8754286 463.123429,36.5714286 448,36.5714286 L64,36.5714286 Z M448,402.285714 L64,402.285714 C28.7108571,402.285714 0,373.576 0,338.285714 L0,64 C0,28.7108571 28.7108571,0 64,0 L448,0 C483.290286,0 512,28.7108571 512,64 L512,338.285714 C512,373.576 483.290286,402.285714 448,402.285714 L448,402.285714 Z M256,237.714286 C252.037714,237.714286 248.075429,236.430857 244.773714,233.862857 L80.2022857,105.861714 C72.2308571,99.6628571 70.7942857,88.1737143 76.9954286,80.2022857 C83.1954286,72.232 94.6834286,70.7942857 102.654857,76.9954286 L256,196.262857 L409.345143,76.9954286 C417.315429,70.7965714 428.805714,72.2308571 435.005714,80.2022857 C441.205714,88.1737143 439.769143,99.6628571 431.797714,105.861714 L267.226286,233.862857 C263.925714,236.430857 259.962286,237.714286 256,237.714286" /></svg> Subscribe</a>
+                    <a href="index.html#" class="nav-darkmode js-darkmode-toggle"><svg class="svg-darkmode svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M435.5,74.7A255.1,255.1,0,0,0,0,255.1,255,255,0,0,0,255.1,510.2,255.1,255.1,0,0,0,435.5,74.7ZM255.1,473.8V36.4c120.6,0,218.7,98.1,218.7,218.7S375.7,473.8,255.1,473.8Z"/></svg></a>
+                    <a href="index.html#" class="nav-search js-search-toggle"><svg class="svg-search svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M506,474.903251 L363.6,331.579608 C391.466667,296.745847 408.266667,252.605355 408.266667,204.609219 C408.266667,92.2636912 316.933333,1.19068968 204.133333,1.19068968 C91.3333333,1.19068968 0,92.3966445 0,204.742172 C0,317.087699 91.3333333,408.160701 204.133333,408.160701 C252.933333,408.160701 297.6,391.14268 332.8,362.690677 L474.266667,505.083647 C478.533333,509.604059 484.4,511.864265 490.133333,511.864265 C495.6,511.864265 501.066667,509.869966 505.2,505.881367 C514,497.50531 514.266667,483.678168 506,474.903251 Z M204.133333,364.41907 C161.333333,364.41907 121.066667,347.799909 90.8,317.619513 C60.5333333,287.439116 43.8666667,247.287224 43.8666667,204.742172 C43.8666667,162.064167 60.5333333,121.912274 90.8,91.8648314 C121.066667,61.6844352 161.333333,45.0652744 204.133333,45.0652744 C246.933333,45.0652744 287.2,61.6844352 317.466667,91.8648314 C347.733333,122.045228 364.4,162.19712 364.4,204.742172 C364.4,247.420177 347.733333,287.57207 317.466667,317.619513 C287.2,347.799909 246.933333,364.41907 204.133333,364.41907 Z" /></svg></a>
+                </div>
+            </div>
+            <a href="index.html#" class="mobile-menu-toggle js-menu-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg></a>
+            <a href="index.html#" class="mobile-search-toggle js-search-toggle"><svg class="svg-search svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M506,474.903251 L363.6,331.579608 C391.466667,296.745847 408.266667,252.605355 408.266667,204.609219 C408.266667,92.2636912 316.933333,1.19068968 204.133333,1.19068968 C91.3333333,1.19068968 0,92.3966445 0,204.742172 C0,317.087699 91.3333333,408.160701 204.133333,408.160701 C252.933333,408.160701 297.6,391.14268 332.8,362.690677 L474.266667,505.083647 C478.533333,509.604059 484.4,511.864265 490.133333,511.864265 C495.6,511.864265 501.066667,509.869966 505.2,505.881367 C514,497.50531 514.266667,483.678168 506,474.903251 Z M204.133333,364.41907 C161.333333,364.41907 121.066667,347.799909 90.8,317.619513 C60.5333333,287.439116 43.8666667,247.287224 43.8666667,204.742172 C43.8666667,162.064167 60.5333333,121.912274 90.8,91.8648314 C121.066667,61.6844352 161.333333,45.0652744 204.133333,45.0652744 C246.933333,45.0652744 287.2,61.6844352 317.466667,91.8648314 C347.733333,122.045228 364.4,162.19712 364.4,204.742172 C364.4,247.420177 347.733333,287.57207 317.466667,317.619513 C287.2,347.799909 246.933333,364.41907 204.133333,364.41907 Z" /></svg></a>
+        </div>
+    </div>
+</header>
+
+<div class="search-wrap js-search result">
+    <div class="search-container">
+
+        <form class="search-form search-field">
+            <span class="search-close js-search-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M485.875811,0.000615602348 L511.99959,26.124405 L282.12259,256.000616 L511.999384,485.876826 L485.875605,512.000616 L255.99959,282.123616 L26.1235737,512.000616 L-0.000205155031,485.876826 L229.87559,256.000616 L-0.000410401566,26.124405 L26.1233685,0.000615602348 L255.99959,229.877616 L485.875811,0.000615602348 Z" /></svg></span>
+
+            <input class="search-input js-search-input" placeholder="Type to Search" type="search">
+            <p class="search-info js-search-error" style="display: none">The content API key is missing, please read the <a href='https://docs.maltiv.com/korima#contentapi'>theme documentation</a>.</p>
+        </form>
+        
+        <div class="search-results js-search-results">
+            <div class="js-search-result"></div>
+        </div>
+
+    </div>    
+</div>
+
+<aside class="mobile-nav">
+    <a href="index.html#" class="mobile-menu-close js-menu-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M485.875811,0.000615602348 L511.99959,26.124405 L282.12259,256.000616 L511.999384,485.876826 L485.875605,512.000616 L255.99959,282.123616 L26.1235737,512.000616 L-0.000205155031,485.876826 L229.87559,256.000616 L-0.000410401566,26.124405 L26.1233685,0.000615602348 L255.99959,229.877616 L485.875811,0.000615602348 Z" /></svg></a>
+    <div class="mobile-menu-wrap">
+        <nav class="mobile-menu">
+            <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-works"><a href="../index.html">Works</a></li>
+
+        <li class="nav-list-item nav-author"><a href="../author/index.html">Author</a></li>
+
+        <li class="nav-list-item nav-pencil"><a href="../tag/pencils/index.html">Pencil</a></li>
+
+        <li class="nav-list-item nav-painting"><a href="http://localhost:2368/tag/paintings/">Painting</a></li>
+
+        <li class="nav-list-item nav-contact nav-current"><a href="index.html">Contact</a></li>
+
+    <!-- End the loop -->
+</ul>
+        </nav>
+
+        <div class="mobile-menu mobile-menu-subscriber">
+                <a class="nav-signup" href="index.html#/portal/signin">Sign In</a>
+                <a class="nav-signup" href="index.html#/portal/signup">Subscribe</a>
+            <a href="index.html#" class="nav-darkmode js-darkmode-toggle"><svg class="svg-darkmode svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M435.5,74.7A255.1,255.1,0,0,0,0,255.1,255,255,0,0,0,255.1,510.2,255.1,255.1,0,0,0,435.5,74.7ZM255.1,473.8V36.4c120.6,0,218.7,98.1,218.7,218.7S375.7,473.8,255.1,473.8Z"/></svg></a>
+        </div>
+    </div>
+</aside>
+<div class="mobile-overlay js-mobile-overlay"></div>
+
+<main id="main-content" class="site-page">
+
+    <div class="container">
+
+        <article id="post" class="post-6213d927723a523af9e1a583 post no-image page no-image">
+	
+            <div class="post-content">
+
+                <header class="post-header">
+
+                    <div class="post-meta">
+                        <h1 class="post-title">Contact</h1>
+                    </div>
+                    
+                </header>
+
+                <div class="post-inner">
+
+                    <div class="post-article">
+                        
+                            <p>If you want to set up a contact page for people to be able to reach out to you, the simplest way is to set up a simple page like this and list the different ways people can reach out to you.</p><h3 id="for-example-heres-how-to-reach-us">For example, here's how to reach us!</h3><ul><li><a href="https://twitter.com/ghost">@Ghost</a> on Twitter</li><li><a href="https://www.facebook.com/ghost">@Ghost</a> on Facebook</li><li><a href="https://instagram.com/ghost">@Ghost</a> on Instagram</li></ul><p>If you prefer to use a contact form, almost all of the great embedded form services work great with Ghost and are easy to set up:</p><figure class="kg-card kg-image-card"><a href="https://ghost.org/integrations/?tag=forms"><img src="https://static.ghost.org/v4.0.0/images/integrations.png" class="kg-image" alt loading="lazy" width="2944" height="1716"></a></figure>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</main>
+
+
+
+<footer id="footer" class="site-footer">
+    <div class="container">
+        <div class="footer-flex">
+            <div class="footer-column left">
+                <div class="footer-logo">
+                    <h2><a href="../index.html">Portraits</a></h2>
+                </div>
+            </div>
+
+            <div class="footer-column center">
+                <div class="footer-nav">
+                        <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-instagram"><a href="https://instagram.com/">Instagram</a></li>
+
+    <!-- End the loop -->
+</ul>
+
+                    <div class="copyright"><a href="../index.html">Portraits</a> &copy; 2022 - All rights reserved.<br/>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></div>
+                </div>
+            </div>
+
+            <div class="footer-column right">
+                <div class="social-link">
+                    
+                    
+
+                                        
+                    <a href="https://feedly.com/i/subscription/feed/http://localhost:2368/contact/rss/" target="_blank" rel="noopener"><svg class="svg-rss svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"/><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"/><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="../assets/js/plugins.min.js%3Fv=f65e728143"></script>
+
+    <script src="../assets/js/index.js%3Fv=f65e728143"></script>
+
+    
+
+    
+
+</body>
+</html>

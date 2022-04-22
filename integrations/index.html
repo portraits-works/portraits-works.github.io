@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Setting up apps and custom integrations</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700,700i%7cNunito+Sans:400,400i,700,700i">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.min.css%3Fv=f65e728143.css" />
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/custom.css%3Fv=f65e728143.css" />
+    
+    <script>
+        var pagination_next_page_number       = '',
+            pagination_available_pages_number = '',
+            url = "http://localhost:2368",
+            //optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
+            ghost_root_url = "/ghost/api/v2";
+    </script>
+    
+    <script src="../assets/js/jquery-3.5.0.min.js%3Fv=f65e728143"></script>
+
+    <script>
+        if(typeof(Storage) !== 'undefined') {
+			if (localStorage.getItem('selected-theme') == 'light') {
+				$(document.documentElement).attr('data-theme', 'light');
+			}
+			else if (localStorage.getItem('selected-theme') == 'dark') {
+				$(document.documentElement).attr('data-theme', 'dark');
+			}
+        }
+    </script>
+    
+    <meta name="description" content="Work with all your favorite apps and tools or create your own custom integrations using the Ghost API." />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Portraits" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Setting up apps and custom integrations" />
+    <meta property="og:description" content="Work with all your favorite apps and tools or create your own custom integrations using the Ghost API." />
+    <meta property="og:url" content="http://localhost:2368/integrations/" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2022/02/marko-i-ogi.jpg" />
+    <meta property="article:published_time" content="2022-02-21T18:25:42.000Z" />
+    <meta property="article:modified_time" content="2022-02-22T17:29:22.000Z" />
+    <meta property="article:tag" content="Pencils" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Setting up apps and custom integrations" />
+    <meta name="twitter:description" content="Work with all your favorite apps and tools or create your own custom integrations using the Ghost API." />
+    <meta name="twitter:url" content="http://localhost:2368/integrations/" />
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2022/02/marko-i-ogi.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Portraits Works" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Pencils" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="2509" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Portraits",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Portraits Works",
+        "url": "http://localhost:2368/author/admin/",
+        "sameAs": []
+    },
+    "headline": "Setting up apps and custom integrations",
+    "url": "http://localhost:2368/integrations/",
+    "datePublished": "2022-02-21T18:25:42.000Z",
+    "dateModified": "2022-02-22T17:29:22.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2022/02/marko-i-ogi.jpg",
+        "width": 2000,
+        "height": 2509
+    },
+    "keywords": "Pencils",
+    "description": "Work with all your favorite apps and tools or create your own custom integrations using the Ghost API.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.36" />
+    <link rel="alternate" type="application/rss+xml" title="Portraits" href="../rss/index.html" />
+    
+    <script defer src="../public/cards.min.js%3Fv=f65e728143"></script>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css%3Fv=f65e728143.css">
+    <style>
+    div.header-column.right {
+        display: none;
+    }
+</style>
+<style>:root {--ghost-accent-color: #FF1A75;}</style>
+    
+</head>
+<body class="post-template tag-pencils">
+
+    
+<header id="header">
+    <div class="container">
+        <div class="header-flex">
+            <div class="header-column left">
+                <div class="navbar-brand">
+                    <div class="navbar-title">
+                            <h1><a href="../index.html">Portraits</a></h1>
+                        <p class="navbar-description">Drawings &amp; Paintings</p>
+                    </div>
+                    <nav class="navbar-menu">
+                        <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-works"><a href="../index.html">Works</a></li>
+
+        <li class="nav-list-item nav-author"><a href="../author/index.html">Author</a></li>
+
+        <li class="nav-list-item nav-pencil"><a href="../tag/pencils/index.html">Pencil</a></li>
+
+        <li class="nav-list-item nav-painting"><a href="http://localhost:2368/tag/paintings/">Painting</a></li>
+
+        <li class="nav-list-item nav-contact"><a href="../contact/index.html">Contact</a></li>
+
+    <!-- End the loop -->
+</ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="header-column right">
+                <div class="navbar-tools">
+                        <a class="nav-signup" href="index.html#/portal/signin">Sign In</a>
+                        <a class="nav-signup" href="index.html#/portal/signup"><svg class="svg-email svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 402.29"><path d="M64,36.5714286 C48.8754286,36.5714286 36.5714286,48.8754286 36.5714286,64 L36.5714286,338.285714 C36.5714286,353.409143 48.8754286,365.714286 64,365.714286 L448,365.714286 C463.123429,365.714286 475.428571,353.409143 475.428571,338.285714 L475.428571,64 C475.428571,48.8754286 463.123429,36.5714286 448,36.5714286 L64,36.5714286 Z M448,402.285714 L64,402.285714 C28.7108571,402.285714 0,373.576 0,338.285714 L0,64 C0,28.7108571 28.7108571,0 64,0 L448,0 C483.290286,0 512,28.7108571 512,64 L512,338.285714 C512,373.576 483.290286,402.285714 448,402.285714 L448,402.285714 Z M256,237.714286 C252.037714,237.714286 248.075429,236.430857 244.773714,233.862857 L80.2022857,105.861714 C72.2308571,99.6628571 70.7942857,88.1737143 76.9954286,80.2022857 C83.1954286,72.232 94.6834286,70.7942857 102.654857,76.9954286 L256,196.262857 L409.345143,76.9954286 C417.315429,70.7965714 428.805714,72.2308571 435.005714,80.2022857 C441.205714,88.1737143 439.769143,99.6628571 431.797714,105.861714 L267.226286,233.862857 C263.925714,236.430857 259.962286,237.714286 256,237.714286" /></svg> Subscribe</a>
+                    <a href="index.html#" class="nav-darkmode js-darkmode-toggle"><svg class="svg-darkmode svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M435.5,74.7A255.1,255.1,0,0,0,0,255.1,255,255,0,0,0,255.1,510.2,255.1,255.1,0,0,0,435.5,74.7ZM255.1,473.8V36.4c120.6,0,218.7,98.1,218.7,218.7S375.7,473.8,255.1,473.8Z"/></svg></a>
+                    <a href="index.html#" class="nav-search js-search-toggle"><svg class="svg-search svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M506,474.903251 L363.6,331.579608 C391.466667,296.745847 408.266667,252.605355 408.266667,204.609219 C408.266667,92.2636912 316.933333,1.19068968 204.133333,1.19068968 C91.3333333,1.19068968 0,92.3966445 0,204.742172 C0,317.087699 91.3333333,408.160701 204.133333,408.160701 C252.933333,408.160701 297.6,391.14268 332.8,362.690677 L474.266667,505.083647 C478.533333,509.604059 484.4,511.864265 490.133333,511.864265 C495.6,511.864265 501.066667,509.869966 505.2,505.881367 C514,497.50531 514.266667,483.678168 506,474.903251 Z M204.133333,364.41907 C161.333333,364.41907 121.066667,347.799909 90.8,317.619513 C60.5333333,287.439116 43.8666667,247.287224 43.8666667,204.742172 C43.8666667,162.064167 60.5333333,121.912274 90.8,91.8648314 C121.066667,61.6844352 161.333333,45.0652744 204.133333,45.0652744 C246.933333,45.0652744 287.2,61.6844352 317.466667,91.8648314 C347.733333,122.045228 364.4,162.19712 364.4,204.742172 C364.4,247.420177 347.733333,287.57207 317.466667,317.619513 C287.2,347.799909 246.933333,364.41907 204.133333,364.41907 Z" /></svg></a>
+                </div>
+            </div>
+            <a href="index.html#" class="mobile-menu-toggle js-menu-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg></a>
+            <a href="index.html#" class="mobile-search-toggle js-search-toggle"><svg class="svg-search svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M506,474.903251 L363.6,331.579608 C391.466667,296.745847 408.266667,252.605355 408.266667,204.609219 C408.266667,92.2636912 316.933333,1.19068968 204.133333,1.19068968 C91.3333333,1.19068968 0,92.3966445 0,204.742172 C0,317.087699 91.3333333,408.160701 204.133333,408.160701 C252.933333,408.160701 297.6,391.14268 332.8,362.690677 L474.266667,505.083647 C478.533333,509.604059 484.4,511.864265 490.133333,511.864265 C495.6,511.864265 501.066667,509.869966 505.2,505.881367 C514,497.50531 514.266667,483.678168 506,474.903251 Z M204.133333,364.41907 C161.333333,364.41907 121.066667,347.799909 90.8,317.619513 C60.5333333,287.439116 43.8666667,247.287224 43.8666667,204.742172 C43.8666667,162.064167 60.5333333,121.912274 90.8,91.8648314 C121.066667,61.6844352 161.333333,45.0652744 204.133333,45.0652744 C246.933333,45.0652744 287.2,61.6844352 317.466667,91.8648314 C347.733333,122.045228 364.4,162.19712 364.4,204.742172 C364.4,247.420177 347.733333,287.57207 317.466667,317.619513 C287.2,347.799909 246.933333,364.41907 204.133333,364.41907 Z" /></svg></a>
+        </div>
+    </div>
+</header>
+
+<div class="search-wrap js-search result">
+    <div class="search-container">
+
+        <form class="search-form search-field">
+            <span class="search-close js-search-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M485.875811,0.000615602348 L511.99959,26.124405 L282.12259,256.000616 L511.999384,485.876826 L485.875605,512.000616 L255.99959,282.123616 L26.1235737,512.000616 L-0.000205155031,485.876826 L229.87559,256.000616 L-0.000410401566,26.124405 L26.1233685,0.000615602348 L255.99959,229.877616 L485.875811,0.000615602348 Z" /></svg></span>
+
+            <input class="search-input js-search-input" placeholder="Type to Search" type="search">
+            <p class="search-info js-search-error" style="display: none">The content API key is missing, please read the <a href='https://docs.maltiv.com/korima#contentapi'>theme documentation</a>.</p>
+        </form>
+        
+        <div class="search-results js-search-results">
+            <div class="js-search-result"></div>
+        </div>
+
+    </div>    
+</div>
+
+<aside class="mobile-nav">
+    <a href="index.html#" class="mobile-menu-close js-menu-toggle"><svg class="svg-close svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M485.875811,0.000615602348 L511.99959,26.124405 L282.12259,256.000616 L511.999384,485.876826 L485.875605,512.000616 L255.99959,282.123616 L26.1235737,512.000616 L-0.000205155031,485.876826 L229.87559,256.000616 L-0.000410401566,26.124405 L26.1233685,0.000615602348 L255.99959,229.877616 L485.875811,0.000615602348 Z" /></svg></a>
+    <div class="mobile-menu-wrap">
+        <nav class="mobile-menu">
+            <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-works"><a href="../index.html">Works</a></li>
+
+        <li class="nav-list-item nav-author"><a href="../author/index.html">Author</a></li>
+
+        <li class="nav-list-item nav-pencil"><a href="../tag/pencils/index.html">Pencil</a></li>
+
+        <li class="nav-list-item nav-painting"><a href="http://localhost:2368/tag/paintings/">Painting</a></li>
+
+        <li class="nav-list-item nav-contact"><a href="../contact/index.html">Contact</a></li>
+
+    <!-- End the loop -->
+</ul>
+        </nav>
+
+        <div class="mobile-menu mobile-menu-subscriber">
+                <a class="nav-signup" href="index.html#/portal/signin">Sign In</a>
+                <a class="nav-signup" href="index.html#/portal/signup">Subscribe</a>
+            <a href="index.html#" class="nav-darkmode js-darkmode-toggle"><svg class="svg-darkmode svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M435.5,74.7A255.1,255.1,0,0,0,0,255.1,255,255,0,0,0,255.1,510.2,255.1,255.1,0,0,0,435.5,74.7ZM255.1,473.8V36.4c120.6,0,218.7,98.1,218.7,218.7S375.7,473.8,255.1,473.8Z"/></svg></a>
+        </div>
+    </div>
+</aside>
+<div class="mobile-overlay js-mobile-overlay"></div>
+
+<main id="main-content" class="site-post">
+    <progress class="post-progress" value="0"></progress>
+
+    <div class="container">
+
+        <article id="post" class="post-6213d926723a523af9e1a573 post tag-pencils">
+	
+            <div class="post-content">
+
+                <header class="post-header">
+                    
+                    <div class="post-cover">
+                        <figure class="post-full-image">
+                            <a href="../content/images/size/w2000/2022/02/marko-i-ogi.jpg">
+                                <img
+                                    srcset="../content/images/size/w300/2022/02/marko-i-ogi.jpg 300w,
+                                           ../content/images/size/w800/2022/02/marko-i-ogi.jpgg 600w,
+                                          ../content/images/size/w1000/2022/02/marko-i-ogi.jpgpg 1000w,
+                                         ../content/images/size/w2000/2022/02/marko-i-ogi.jpgjpg 2000w"
+                                    sizes="(max-width: 800px) 400px,
+                                        (max-width: 1170px) 1170px,
+                                            2000px"
+                                    src="../content/images/size/w2000/2022/02/marko-i-ogi.jpg"
+                                    alt="Setting up apps and custom integrations"
+                                />
+                            </a>
+                        </figure>
+                    </div>
+
+                    <div class="post-meta">
+                        <div class="post-tag">
+                            
+                            <a href="../tag/pencils/index.html">Pencils</a>
+                        </div>
+
+                        <h1 class="post-title">Setting up apps and custom integrations</h1>
+                        
+                        <div class="post-datetime">
+                            <span><time datetime="2022-02-21">February 21, 2022</time></span>
+                            <span>-</span>
+                            <span>1 min read</span>
+                        </div>
+
+                        <div class="post-author">
+                            <div class="post-author-avatar">
+                                <a href="../author/admin/index.html" title="Portraits Works" class="author-admin">
+                                    <img class="avatar avatar-80" src="../assets/images/default-avatar.png%3Fv=f65e728143" alt="Portraits Works">
+                                </a>
+                            </div>
+                            <a href="../author/admin/index.html" title="Portraits Works" class="author-admin post-author-name">Portraits Works</a>
+                        </div>
+                    </div>
+                    
+                </header>
+
+                <div class="post-inner">
+
+                    <div class="post-article">
+                        <p class="post-excerpt">Work with all your favorite apps and tools or create your own custom integrations using the Ghost API.</p>
+                        
+                            <p>It's possible to extend your Ghost site and connect it with hundreds of the most popular apps and tools using integrations. </p><p>Whether you need to automatically publish new posts on social media, connect your favorite analytics tool, sync your community or embed forms into your content — our <a href="https://ghost.org/integrations/">integrations library</a> has got it all covered with hundreds of integration tutorials.</p><p>Many integrations are as simple as inserting an embed by pasting a link, or copying a snippet of code directly from an app and pasting it into Ghost. Our integration tutorials are used by creators of all kinds to get apps and integrations up and running in no time — no technical knowledge required.</p><figure class="kg-card kg-image-card"><img src="https://static.ghost.org/v4.0.0/images/integrations-icons.png" class="kg-image" alt loading="lazy"></figure><h2 id="zapier">Zapier</h2><p>Zapier is a no-code tool that allows you to build powerful automations, and our official integration allows you to connect your Ghost site to more than 1,000 external services.</p><blockquote><strong>Example</strong>: When someone new subscribes to a newsletter on a Ghost site (Trigger) then the contact information is automatically pushed into MailChimp (Action).</blockquote><p><strong>Here's a few of the most popular automation templates:</strong> </p><figure class="kg-card kg-image-card"><img src="https://static.ghost.org/v4.0.0/images/iawriter-integration.png" class="kg-image" alt loading="lazy" width="2244" height="936"></figure><p>These custom integrations allow you to use the Ghost API without needing to write code, and create powerful workflows such as sending content from your favorite desktop editor into Ghost as a new draft.</p>
+
+                        <div class="post-share">
+                            <span class="post-share-label">Share this article: </span>
+                            <a class="social-share facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/integrations/" onclick="window.open(this.href, 'share-facebook', 'width=550, height=296');return false;"><svg class="svg-facebook svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M426.8 64H85.2C73.5 64 64 73.5 64 85.2v341.6c0 11.7 9.5 21.2 21.2 21.2H256V296h-45.9v-56H256v-41.4c0-49.6 34.4-76.6 78.7-76.6 21.2 0 44 1.6 49.3 2.3v51.8h-35.3c-24.1 0-28.7 11.4-28.7 28.2V240h57.4l-7.5 56H320v152h106.8c11.7 0 21.2-9.5 21.2-21.2V85.2c0-11.7-9.5-21.2-21.2-21.2z"/></svg>
+</a>
+                            <a class="social-share twitter-share" href="https://www.twitter.com/share?text=Setting%20up%20apps%20and%20custom%20integrations&amp;url=http://localhost:2368/integrations/" onclick="window.open(this.href, 'share-twitter', 'width=550, height=235');return false;"><svg class="svg-twitter svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6-18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6.8 15 2.5 22.1-80.5-4-151.9-42.6-199.6-101.3-8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7-16-.4-31-4.8-44-12.1v1.2c0 47 33.4 86.1 77.7 95-8.1 2.2-16.7 3.4-25.5 3.4-6.2 0-12.3-.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3-33.1 26-74.9 41.5-120.3 41.5-7.8 0-15.5-.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-.1-8.4-.3-12.5C462.6 146 479 129 492 109.5z"/></svg></a>
+                            <a class="social-share linkedin-share" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:2368/integrations/&title=Setting%20up%20apps%20and%20custom%20integrations&summary=Setting%20up%20apps%20and%20custom%20integrations&source=http://localhost:2368" target="_blank"><svg class="svg-linkedin svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"/></svg>
+</a> 
+                            <span class="social-share bookmark-share" id="copy" data-clipboard-text="http://localhost:2368/integrations/"><svg class="svg-bookmark svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M405.2 64h-21c15 5.7 22.8 20.6 22.8 42.7v298.7c0 22.1-7 37.3-22.8 42.7h21c23.7 0 42.8-19.2 42.8-42.7V106.7c0-23.5-19.1-42.7-42.8-42.7zM345.5 64.2c-1.4-.1-2.8-.2-4.2-.2H106.7C83.2 64 64 83.2 64 106.7v298.7c0 23.5 19.2 42.7 42.7 42.7h234.7c1.4 0 2.8-.1 4.2-.2 21.5-2.1 38.5-20.4 38.5-42.5V106.7c-.1-22.1-17.1-40.4-38.6-42.5zM208 256l-56-32-56 32V96h112v160z"/></svg>
+</span>
+                            <span class="bookmark-popup">Link copied to clipboard!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-content-author">
+                        <div class="author-avatar">
+                            <a href="../author/admin/index.html" title="Portraits Works" class="author-admin">
+                                <img class="avatar avatar-80" src="../assets/images/default-avatar.png%3Fv=f65e728143" alt="Portraits Works">
+                            </a>
+                        </div>
+
+                        <div class="author-desc">
+                            <span>Written by</span>
+                            <h4><a href="../author/admin/index.html" title="Portraits Works" class="author-name author-admin">Portraits Works</a></h4>
+                                <p class="author-bio">Read <a href='../author/admin/index.html'>more posts</a> by this author</p>
+                        </div>
+                    </div>
+
+                    <div class="post-comment">
+                        <button class="comment-load js-disqus-load" type="button" role="button" onclick="disqus(); return false;">Load Comments <span></span></button>
+
+                        <section class="disqus-comment">
+    <div id="disqus_thread"></div>
+    <script>
+    // =================
+    // disqus comment system loader
+    // =================
+    if( typeof(disqus_shortname) == 'undefined' || disqus_shortname.length == 0) {
+        $('.post-comment').css({ display: 'none' });
+    } 
+
+    var disqus_config = function () {
+        this.page.url = 'http://localhost:2368/integrations/';  
+        this.page.identifier = 'ghost-6213d926723a523af9e1a573'
+    };
+
+    function disqus() {
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+
+        var disqus_load_btn = $('.js-disqus-load');
+        disqus_load_btn.attr('disabled', true);
+        disqus_load_btn.addClass('disabled');
+    }
+    </script>
+</section>
+                    </div>
+                    
+                </div>
+
+                <div class="post-related">
+                    <p>You might also like...</p>
+                    <div class="grid js-grid">
+                        <div class="entry-grid js-post-card post">
+
+                            <div class="entry-media post-card-image-link">
+                                <a class="entry-media-img post-card-image js-fadein" href="../write/index.html" style="background-image: url('../content/images/size/w800/2022/02/shica2.jpg')"></a>
+                            </div>
+
+                            <div class="entry-body post-card-content">
+                                <header class="entry-header">
+                                    <h2 class="entry-title"><a href="../write/index.html">Shica</a></h2>
+                                </header>
+
+                                <div class="entry-datetime">
+                                    <span><time datetime="2022-02-21">February 21, 2022</time></span>
+                                    <span>-</span>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="entry-grid js-post-card post">
+
+                            <div class="entry-media post-card-image-link">
+                                <a class="entry-media-img post-card-image js-fadein" href="../portal/index.html" style="background-image: url('../content/images/size/w800/2022/02/nord-1.jpg')"></a>
+                            </div>
+
+                            <div class="entry-body post-card-content">
+                                <header class="entry-header">
+                                    <h2 class="entry-title"><a href="../portal/index.html">Nord</a></h2>
+                                </header>
+
+                                <div class="entry-datetime">
+                                    <span><time datetime="2022-02-21">February 21, 2022</time></span>
+                                    <span>-</span>
+                                    <span>2 min read</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="entry-grid js-post-card post featured">
+
+                            <div class="entry-media post-card-image-link">
+                                <a class="entry-media-img post-card-image js-fadein" href="../grow/index.html" style="background-image: url('../content/images/size/w800/2022/02/ok.jpg')"></a>
+                            </div>
+
+                            <div class="entry-body post-card-content">
+                                <header class="entry-header">
+                                    <h2 class="entry-title"><a href="../grow/index.html">Marley</a></h2>
+                                </header>
+
+                                <div class="entry-datetime">
+                                    <span><time datetime="2022-02-21">February 21, 2022</time></span>
+                                    <span>-</span>
+                                    <span>2 min read</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                function progressBar() {
+                    var readingBar = document.querySelector('.post-progress'),
+                        readingArea = document.querySelector('.post-inner').getBoundingClientRect(),
+                        windowHeight = window.innerHeight / 2;
+
+                        Math.round(readingBar.max - readingBar.value);
+                        readingArea.top > windowHeight && (readingBar.value = 0), readingArea.top < windowHeight && (readingBar.value = readingBar.max), readingArea.top <= windowHeight && readingArea.bottom >= windowHeight && (readingBar.value = readingBar.max * Math.abs(readingArea.top - windowHeight) / readingArea.height);
+                }
+
+                $(document).ready(function() {
+                    // When the user scrolls the page, execute progressBar 
+                    window.onscroll = function() {progressBar()};
+                });
+            </script>
+        </article>
+
+    </div>
+
+</main>
+
+<script>
+$(document).ready(function() {
+    $('.post-full-image a').simpleLightbox();
+});
+</script>
+
+
+<footer id="footer" class="site-footer">
+    <div class="container">
+        <div class="footer-flex">
+            <div class="footer-column left">
+                <div class="footer-logo">
+                    <h2><a href="../index.html">Portraits</a></h2>
+                </div>
+            </div>
+
+            <div class="footer-column center">
+                <div class="footer-nav">
+                        <ul class="nav nav-list">
+    <!-- Loop through the navigation items -->
+        <li class="nav-list-item nav-instagram"><a href="https://instagram.com/">Instagram</a></li>
+
+    <!-- End the loop -->
+</ul>
+
+                    <div class="copyright"><a href="../index.html">Portraits</a> &copy; 2022 - All rights reserved.<br/>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></div>
+                </div>
+            </div>
+
+            <div class="footer-column right">
+                <div class="social-link">
+                    
+                    
+
+                                        
+                    <a href="https://feedly.com/i/subscription/feed/http://localhost:2368/integrations/rss/" target="_blank" rel="noopener"><svg class="svg-rss svg-social-media svg-icon svg-icon-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"/><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"/><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="../assets/js/plugins.min.js%3Fv=f65e728143"></script>
+
+    <script src="../assets/js/index.js%3Fv=f65e728143"></script>
+
+    
+
+    
+
+</body>
+</html>
